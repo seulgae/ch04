@@ -2,6 +2,7 @@
 IntelliJ 2022.01.03 / JDK11 / Tomcat 9.0.52 / Maven
 
 ## 1강 MyBatis의 소개와 설정 48:18
+https://doltae.tistory.com/228?category=1034850
 
 ## 2강 MyBatis로 DAO작성하기 45:54
 
