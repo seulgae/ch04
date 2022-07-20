@@ -23,7 +23,7 @@
 														<!-- mybatis 설정 위치 -->
 		<property name="configLocation"  value="classpath:mybatis-config.xml"/>
 														<!-- sql 담긴 파일들 패턴 위치-->
-		<!-- property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/> -->
+		<property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
 	</bean>
 
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">

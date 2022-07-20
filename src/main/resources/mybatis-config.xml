@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <!--<typeAlias alias="BoardDto" type="com.fastcampus.ch4.domain.BoardDto"/>-->
+        <!-- boardMapper에 resultType 긴 이름을 alias 값으로 축소시켜줌.-->
+        <typeAlias alias="BoardDto" type="com.fastcampus.ch4.domain.BoardDto"/>
     </typeAliases>
 </configuration>
