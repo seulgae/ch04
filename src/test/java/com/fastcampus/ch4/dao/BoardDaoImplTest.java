@@ -18,10 +18,10 @@ public class BoardDaoImplTest {
     private BoardDao boardDao;
 
     @Test
-    public void insertTestData() throws Exception {
+    public void insertTestData() throws Exception{
         boardDao.deleteAll();
-        for (int i=1;i<=200; i++){
-            BoardDto boardDto = new BoardDto("title" + i, "HI", "abc");
+        for (int i=1;i<=220;i++){
+            BoardDto boardDto = new BoardDto("title"+i, "no content", "asdf");
             boardDao.insert(boardDto);
         }
     }

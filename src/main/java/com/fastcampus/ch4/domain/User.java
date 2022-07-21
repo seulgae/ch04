@@ -99,6 +99,7 @@ public class User {
 
     public Date getReg_date() {
         return reg_date;
+
     }
 
     public void setReg_date(Date reg_date) {

@@ -1,6 +1,6 @@
 package com.fastcampus.ch4.service;
 
-import com.fastcampus.ch4.dao.BoardDao;
+import com.fastcampus.ch4.dao.*;
 import com.fastcampus.ch4.domain.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -54,7 +54,7 @@ public class BoardServiceImpl implements BoardService {
 //    public int getSearchResultCnt(SearchCondition sc) throws Exception {
 //        return boardDao.searchResultCnt(sc);
 //    }
-
+//
 //    @Override
 //    public List<BoardDto> getSearchResultPage(SearchCondition sc) throws Exception {
 //        return boardDao.searchSelectPage(sc);
