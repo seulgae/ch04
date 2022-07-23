@@ -72,7 +72,7 @@ public class LoginController {
         User user = null;
 
         try {
-            user = userDao.selectUser2(id, pwd);
+            user = userDao.selectUser(id);
         } catch (Exception e) {
             e.printStackTrace();
             return false;
