@@ -22,8 +22,8 @@
 </div><div style="text-align:center">
     <h2>게시물 읽기</h2>
     <form action="" id="form">
-        <input type="bno" name="bno" value="${boardDto.bno}" readonly="readonly">
-        <input type="title" name="title" value="${boardDto.title}" readonly="readonly">
+        <input type="text" name="bno" value="${boardDto.bno}" readonly="readonly">
+        <input type="text" name="title" value="${boardDto.title}" readonly="readonly">
         <textarea name="content" id="" cols="30" rows="10" readonly="readonly">${boardDto.content}</textarea>
         <button type="button" id="writeBtn" class="btn">등록</button>
         <button type="button" id="modifyBtn" class="btn">수정</button>
@@ -39,7 +39,7 @@
         $('#removeBtn').on("click", function (){
             if(!confirm("정말로 삭제하시겠습니까?")) return;
             let form = $('#form');
-            form.attr("action", "<c:url value='/board/remove'/>");
+            form.attr("action", "<c:url value='/board/remove'/>?$page=${page}$pageSize=${pageSize}");
             form.attr("method", "post");
             form.submit();
         });

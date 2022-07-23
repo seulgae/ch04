@@ -34,8 +34,8 @@ public class BoardController {
 
             if(rowCnt!=1)
                 throw new Exception("board remove error");
-                rattr.addFlashAttribute("msg", "DEL_OK");
 
+            rattr.addFlashAttribute("msg", "DEL_OK");
         } catch (Exception e) {
             e.printStackTrace();
             rattr.addFlashAttribute("msg", "DEL_ERR");
