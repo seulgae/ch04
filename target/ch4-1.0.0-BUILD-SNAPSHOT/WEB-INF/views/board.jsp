@@ -41,6 +41,25 @@
         $('#listBtn').on("click", function (){
            location.href = "<c:url value="/board/list" />?$page=${page}$pageSize=${pageSize}";
         });
+        $('#modifyBtn').on("click", function (){
+            //1. 읽기 상태이면 수정 상태로 변경
+            let form = $('#form');
+            let isReadOnly = $("input[name=title]").attr('readonly');
+
+            if(isReadOnly=='readonly'){
+                $("input[name=title]").attr('readonly', false); // title
+                $("textarea").attr('readonly', false); // content
+                $("modifyBtn").html("등록");
+                $("h2").html("게시물 수정");
+                return;
+            }
+
+            //2. 수정 상태이면, 수정된 내용을 서버로 전송
+            form.attr("action", "<c:url value='/board/modify'/>");
+            form.attr("method", "post");
+            form.submit();
+        });
+
         $('#writeBtn').on("click", function (){
             let form = $('#form');
             form.attr("action", "<c:url value='/board/write'/>");
