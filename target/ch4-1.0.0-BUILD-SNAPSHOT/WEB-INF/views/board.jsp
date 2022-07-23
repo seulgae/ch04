@@ -19,12 +19,17 @@
         <li><a href="<c:url value='/register/add'/>">Sign in</a></li>
         <li><a href=""><i class="fas fa-search small"></i></a></li>
     </ul>
-</div><div style="text-align:center">
-    <h2>게시물 읽기</h2>
+</div>
+<script>
+    let msg="${msg}";
+    if(msg=="WRT_ERR") alert("게시물 등록에 실패했습니다. 다시 시도해 주세요.");
+</script>
+<div style="text-align:center">
+    <h2>게시물 ${mode=="new" ? "글쓰기" : "읽기"}</h2>
     <form action="" id="form">
-        <input type="text" name="bno" value="${boardDto.bno}" readonly="readonly">
-        <input type="text" name="title" value="${boardDto.title}" readonly="readonly">
-        <textarea name="content" id="" cols="30" rows="10" readonly="readonly">${boardDto.content}</textarea>
+        <input type="hidden" name="bno" value="${boardDto.bno}">
+        <input type="text" name="title" value="${boardDto.title}" ${ mode=="new" ? '' : 'readonly="readonly"'}>
+        <textarea name="content" id="" cols="30" rows="10" ${ mode=="new" ? '' : 'readonly="readonly"'}>${boardDto.content}</textarea>
         <button type="button" id="writeBtn" class="btn">등록</button>
         <button type="button" id="modifyBtn" class="btn">수정</button>
         <button type="button" id="removeBtn" class="btn">삭제</button>
@@ -35,6 +40,12 @@
     $(document).ready(function (){ // main()
         $('#listBtn').on("click", function (){
            location.href = "<c:url value="/board/list" />?$page=${page}$pageSize=${pageSize}";
+        });
+        $('#writeBtn').on("click", function (){
+            let form = $('#form');
+            form.attr("action", "<c:url value='/board/write'/>");
+            form.attr("method", "post");
+            form.submit();
         });
         $('#removeBtn').on("click", function (){
             if(!confirm("정말로 삭제하시겠습니까?")) return;
